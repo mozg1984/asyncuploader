@@ -31,10 +31,10 @@ if (!Array.indexOf) {
 		_$container = $('<div/>').html(_$input);
 	
 	var extensions = "",
-		  url = "",
-		  method = "post",
-		  enctype = "multipart/form-data",
-		  domInitDelay = 1500;// for dom initializing
+		url = "",
+		method = "post",
+		enctype = "multipart/form-data",
+		domInitDelay = 1500;// for dom initializing
 	
 	var events = {
 		start: function () {},
@@ -168,32 +168,32 @@ if (!Array.indexOf) {
 		}
 	
 		_$selector =  $(params.selector).length > 0 
-					        ? $(params.selector)
-					        : _$selector;
+					  ? $(params.selector)
+					  : _$selector;
 		
 		if (_$selector == null) {
 			throw new Error("The selector at <AsyncUploader.init> is undefined");
 		}
 		
 		url = params.url && ('' + params.url).length > 0
-			    ? ('' + params.url).replace(/^\s+/, '').replace(/\s+$/, '').replace(/\\+/g, '/')
-			    : url;
+			  ? ('' + params.url).replace(/^\s+/, '').replace(/\s+$/, '').replace(/\\+/g, '/')
+			  : url;
 		
 		extensions = isArray(params.extensions) && params.extensions.length > 0 
-					       ? params.extensions
-					       : extensions;
+					 ? params.extensions
+					 : extensions;
 		
 		events.start = typeof params.start == 'function'
-					         ? params.start
-					         : events.start;
+					   ? params.start
+					   : events.start;
 					   
 		events.complete = typeof params.complete == 'function'
-					            ? params.complete
-					            : events.complete;
+					   ? params.complete
+					   : events.complete;
 					   
 		events.extensionError = typeof params.extensionError == 'function'
-					                  ? params.extensionError
-					                  : events.extensionError;
+					   ? params.extensionError
+					   : events.extensionError;
 		
 		var iframeName = 'async-iframe-' + uniqueId();		
 		
