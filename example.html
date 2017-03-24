@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script type="text/javascript" src="/path/to/jquery.js"></script>
+		<script type="text/javascript" src="/path/to/asyncuploader/src.js"></script>
+		<script>
+		$(document).ready(function () {
+			AsyncUploader.init({
+				url: 'async-upload.php',                      // path to the server uploader
+				selector: '#async-uploader',                  // your selector of element 
+				start: function () { /* todo */ },            // started uploading event handler 
+				complete: function (response) { /* todo */ }, // completed uploading event handler 
+				extensionError: function () { /* todo */ }    // raised extension error event handler
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="upload" id="async-uploader" />
+	</body>
+</html>
