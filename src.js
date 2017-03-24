@@ -217,7 +217,7 @@ if (!Array.indexOf) {
         _$selector.click(function () {
             _$input.trigger('click');
         });
-    }
+    };
 
     // import module into global namespace
     global.AsyncUploader = module;
